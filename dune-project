@@ -14,8 +14,18 @@
 
 (bug_reports https://github.com/noomly/melange-tea/issues)
 
+(generate_opam_files)
+
 (package
- (allow_empty)
  (name melange-tea)
- (synopsis "Melange tea")
- (description "Port of Bucklescript-tea for Melange"))
+ (synopsis "The Elm Architecture for Melange")
+ (description "Port of Bucklescript-tea for Melange")
+ (depends
+  (ocaml
+   (>= "5.1"))
+  (melange
+   (>= "2.0.0"))
+  melange-webapi
+  (reason
+   (>= "3.10"))
+  (ocaml-lsp-server :with-test)))

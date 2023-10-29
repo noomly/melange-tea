@@ -1,6 +1,10 @@
+(include_subdirs unqualified)
+
 (library
- (libraries melange-webapi promise)
- (preprocess
-  (pps melange.ppx reason-react-ppx))
  (name tea)
- (modes melange))
+ (public_name melange-tea)
+ (wrapped false)
+ (libraries melange-webapi)
+ (modes melange)
+ (preprocess
+  (pps melange.ppx)))
