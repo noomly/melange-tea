@@ -1,3 +1,6 @@
 (library
+ (libraries melange-webapi promise)
+ (preprocess
+  (pps melange.ppx reason-react-ppx))
  (name tea)
  (modes melange))
