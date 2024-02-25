@@ -6,23 +6,23 @@ module LocalStorage = Web_window_localstorage
 type timeoutHandlerID = int
 
 type t =
-  < history : History.t Js.Undefined.t [@bs.get]
-  ; location : Web_location.t [@bs.get]
-  ; clearTimeout : timeoutHandlerID -> unit [@bs.meth]
-  ; requestAnimationFrame : (float -> unit) -> int [@bs.meth]
-  ; cancelAnimationFrame : int -> unit [@bs.meth]
-  ; setInterval : (unit -> unit) -> float -> timeoutHandlerID [@bs.meth]
-  ; setTimeout : (unit -> unit) -> float -> timeoutHandlerID [@bs.meth]
+  < history : History.t Js.Undefined.t [@mel.get]
+  ; location : Web_location.t [@mel.get]
+  ; clearTimeout : timeoutHandlerID -> unit [@mel.meth]
+  ; requestAnimationFrame : (float -> unit) -> int [@mel.meth]
+  ; cancelAnimationFrame : int -> unit [@mel.meth]
+  ; setInterval : (unit -> unit) -> float -> timeoutHandlerID [@mel.meth]
+  ; setTimeout : (unit -> unit) -> float -> timeoutHandlerID [@mel.meth]
   ; addEventListener :
       string -> Web_node.t Web_event.cb -> Web_event.options -> unit
-        [@bs.meth]
+        [@mel.meth]
   ; removeEventListener :
       string -> Web_node.t Web_event.cb -> Web_event.options -> unit
-        [@bs.meth]
-  ; localStorage : LocalStorage.t Js.Undefined.t [@bs.get] >
+        [@mel.meth]
+  ; localStorage : LocalStorage.t Js.Undefined.t [@mel.get] >
   Js.t
 
-external window : t = "window" [@@bs.val]
+external window : t = "window" [@@mel.val]
 
 let history () = window##history
 let localStorage () = window##localStorage

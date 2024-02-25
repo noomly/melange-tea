@@ -37,7 +37,7 @@ external makeProgramInterface :
   shutdown:(unit -> unit) ->
   getHtmlString:(unit -> string) ->
   'msg programInterface = ""
-[@@bs.obj]
+[@@mel.obj]
 
 let programStateWrapper initModel pump shutdown =
   let open Vdom in

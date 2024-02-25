@@ -200,12 +200,12 @@ let send resultToMessage (Request (request, maybeEvents)) =
       ()
     )
 
-external encodeURIComponent : string -> string = "encodeURIComponent" [@@bs.val]
+external encodeURIComponent : string -> string = "encodeURIComponent" [@@mel.val]
 
 let encodeUri str =
     encodeURIComponent str
 
-external decodeURIComponent : string -> string = "decodeURIComponent" [@@bs.val]
+external decodeURIComponent : string -> string = "decodeURIComponent" [@@mel.val]
 
 let decodeUri str =
     try Some (decodeURIComponent str)

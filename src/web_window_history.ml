@@ -1,13 +1,13 @@
 
 
 type t = <
-  length : int [@bs.get];
-  back : unit -> unit [@bs.meth];
-  forward : unit -> unit [@bs.meth];
-  go : int -> unit [@bs.meth];
-  pushState : Js.Json.t -> string -> string -> unit [@bs.meth];
-  replaceState : Js.Json.t -> string -> string -> unit [@bs.meth];
-  state : Js.Json.t [@bs.get];
+  length : int [@mel.get];
+  back : unit -> unit [@mel.meth];
+  forward : unit -> unit [@mel.meth];
+  go : int -> unit [@mel.meth];
+  pushState : Js.Json.t -> string -> string -> unit [@mel.meth];
+  replaceState : Js.Json.t -> string -> string -> unit [@mel.meth];
+  state : Js.Json.t [@mel.get];
 > Js.t
 
 

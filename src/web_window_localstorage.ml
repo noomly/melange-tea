@@ -1,10 +1,10 @@
 type t =
-  < length : int [@bs.get]
-  ; clear : unit -> unit [@bs.meth]
-  ; key : int -> string [@bs.meth]
-  ; getItem : string -> string [@bs.meth]
-  ; removeItem : string -> unit [@bs.meth]
-  ; setItem : string -> string -> unit [@bs.meth] >
+  < length : int [@mel.get]
+  ; clear : unit -> unit [@mel.meth]
+  ; key : int -> string [@mel.meth]
+  ; getItem : string -> string [@mel.meth]
+  ; removeItem : string -> unit [@mel.meth]
+  ; setItem : string -> string -> unit [@mel.meth] >
   Js.t
 
 let length window =

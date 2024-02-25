@@ -5,3 +5,4 @@
 /lib/ocaml
 npm-debug.log
 _build
+_opam

@@ -10,10 +10,10 @@ bug-reports: "https://github.com/noomly/melange-tea/issues"
 depends: [
   "dune" {>= "3.8"}
   "ocaml" {>= "5.1"}
-  "melange" {>= "2.0.0"}
-  "melange-fetch"
+  "melange" {>= "3.0.0"}
   "melange-webapi"
   "reason" {>= "3.10"}
+  "ocamlformat"
   "ocaml-lsp-server" {with-test}
   "odoc" {with-doc}
 ]

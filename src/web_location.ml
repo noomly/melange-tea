@@ -1,17 +1,17 @@
 
 
 type t = <
-  href : string [@bs.get] [@bs.set];
-  protocol : string [@bs.get] [@bs.set];
-  host : string [@bs.get] [@bs.set];
-  hostname : string [@bs.get] [@bs.set];
-  port : string [@bs.get] [@bs.set];
-  pathname : string [@bs.get] [@bs.set];
-  search : string [@bs.get] [@bs.set];
-  hash : string [@bs.get] [@bs.set];
-  username : string [@bs.get] [@bs.set];
-  password : string [@bs.get] [@bs.set];
-  origin : string [@bs.get];
+  href : string [@mel.get] [@mel.set];
+  protocol : string [@mel.get] [@mel.set];
+  host : string [@mel.get] [@mel.set];
+  hostname : string [@mel.get] [@mel.set];
+  port : string [@mel.get] [@mel.set];
+  pathname : string [@mel.get] [@mel.set];
+  search : string [@mel.get] [@mel.set];
+  hash : string [@mel.get] [@mel.set];
+  username : string [@mel.get] [@mel.set];
+  password : string [@mel.get] [@mel.set];
+  origin : string [@mel.get];
 > Js.t
 
 let getHref location = location##href

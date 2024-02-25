@@ -1,12 +1,12 @@
 (* type target = <
-  value : string Js.undefined [@bs.get];
+  value : string Js.undefined [@mel.get];
 > Js.t *)
 
 type 'node t = <
-  target : 'node Js.undefined [@bs.get];
-  keyCode : int [@bs.get];
-  preventDefault : unit -> unit [@bs.meth];
-  stopPropagation : unit -> unit [@bs.meth];
+  target : 'node Js.undefined [@mel.get];
+  keyCode : int [@mel.get];
+  preventDefault : unit -> unit [@mel.meth];
+  stopPropagation : unit -> unit [@mel.meth];
 > Js.t
 
 type 'node cb = 'node t -> unit [@bs]

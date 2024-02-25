@@ -1,52 +1,52 @@
 type style =
   < setProperty : Web_json.t Js.undefined
-        [@bs.get] (* TODO:  Revamp this and the next line... *)
+        [@mel.get] (* TODO:  Revamp this and the next line... *)
   ; setProperty__ : string -> string Js.null -> string Js.null -> unit
-        [@bs.meth] >
+        [@mel.meth] >
   Js.t
 
-external getStyle : style -> string -> string Js.null = "" [@@bs.get_index]
+external getStyle : style -> string -> string Js.null = "" [@@mel.get_index]
 
 external setStyle : style -> string -> string Js.null -> unit = ""
-[@@bs.set_index]
+[@@mel.set_index]
 
 type t =
-  < style : style [@bs.get]
-  ; value : string Js.undefined [@bs.set] [@bs.get]
-  ; checked : bool Js.undefined [@bs.set] [@bs.get]
-  ; childNodes : t Js.Array.t [@bs.get]
-  ; firstChild : t Js.Null.t [@bs.get]
-  ; appendChild : t -> t [@bs.meth]
-  ; removeChild : t -> t [@bs.meth]
-  ; insertBefore : t -> t -> t [@bs.meth]
-  ; remove : unit -> unit [@bs.meth]
-  ; setAttributeNS : string -> string -> string -> unit [@bs.meth]
-  ; setAttribute : string -> string -> unit [@bs.meth]
-  ; removeAttributeNS : string -> string -> unit [@bs.meth]
-  ; removeAttribute : string -> unit [@bs.meth]
+  < style : style [@mel.get]
+  ; value : string Js.undefined [@mel.set] [@mel.get]
+  ; checked : bool Js.undefined [@mel.set] [@mel.get]
+  ; childNodes : t Js.Array.t [@mel.get]
+  ; firstChild : t Js.Null.t [@mel.get]
+  ; appendChild : t -> t [@mel.meth]
+  ; removeChild : t -> t [@mel.meth]
+  ; insertBefore : t -> t -> t [@mel.meth]
+  ; remove : unit -> unit [@mel.meth]
+  ; setAttributeNS : string -> string -> string -> unit [@mel.meth]
+  ; setAttribute : string -> string -> unit [@mel.meth]
+  ; removeAttributeNS : string -> string -> unit [@mel.meth]
+  ; removeAttribute : string -> unit [@mel.meth]
   ; addEventListener : string -> t Web_event.cb -> Web_event.options -> unit
-        [@bs.meth]
+        [@mel.meth]
   ; removeEventListener : string -> t Web_event.cb -> Web_event.options -> unit
-        [@bs.meth]
-  ; focus : unit -> unit [@bs.meth]
+        [@mel.meth]
+  ; focus : unit -> unit [@mel.meth]
   ; (* Text Nodes only *)
-  nodeValue : string [@bs.set] [@bs.get { null }] >
+  nodeValue : string [@mel.set] [@mel.get { null }] >
   Js.t
 
-external document_node : t = "document" [@@bs.val]
+external document_node : t = "document" [@@mel.val]
 
 type event = t Web_event.t
 type event_cb = t Web_event.cb
 
 external getProp_asEventListener : t -> 'key -> t Web_event.cb Js.undefined = ""
-[@@bs.get_index]
+[@@mel.get_index]
 
 external setProp_asEventListener :
   t -> 'key -> t Web_event.cb Js.undefined -> unit = ""
-[@@bs.set_index]
+[@@mel.set_index]
 
-external getProp : t -> 'key -> 'value = "" [@@bs.get_index]
-external setProp : t -> 'key -> 'value -> unit = "" [@@bs.set_index]
+external getProp : t -> 'key -> 'value = "" [@@mel.get_index]
+external setProp : t -> 'key -> 'value -> unit = "" [@@mel.set_index]
 
 let style n = n##style
 let getStyle n key = getStyle n##style key

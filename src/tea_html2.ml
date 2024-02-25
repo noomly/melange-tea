@@ -558,9 +558,9 @@ module Events = struct
         let element =
           Webapi.Dom.Event.target ev |> Webapi.Dom.EventTarget.unsafeAsElement
         in
-        match Webapi.Dom.HtmlElement.ofElement element with
+        match Webapi.Dom.HtmlInputElement.ofElement element with
         | None -> None
-        | Some inputElement -> msg (Webapi.Dom.HtmlElement.value inputElement))
+        | Some inputElement -> msg (Webapi.Dom.HtmlInputElement.value inputElement))
 
   let onInput ?(key = "") msg = onInputOpt ~key (fun ev -> Some (msg ev))
 
