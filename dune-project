@@ -21,11 +21,8 @@
  (synopsis "The Elm Architecture for Melange")
  (description "Port of Bucklescript-tea for Melange")
  (depends
-  (ocaml
-   (>= "5.1"))
-  (melange
-   (>= "2.0.0"))
+  (ocaml (>= "5.1"))
+  (melange (= "2.2.0"))
   melange-webapi
-  (reason
-   (>= "3.10"))
+  (reason (>= "3.10"))
   (ocaml-lsp-server :with-test)))
